@@ -55,6 +55,6 @@ function Start-HuduExport {
     $JSON = $ExportData | ConvertTo-Json
 
     if ($PSCmdlet.ShouldProcess($CompanyID, "Initiate export")) {
-        Invoke-HuduRequest -Method Post -Resource "/api/v1/exports" -Body $JSON
+        return Invoke-HuduRequest -Method Post -Resource "/api/v1/exports" -Body $JSON
     }
 }
